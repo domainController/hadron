@@ -1,3 +1,5 @@
+// Node crashcourse
+
 const url = require('url');
 
 const myURL = url.parse('http://mywebsite.com/hello.html?id=100&status=active');
@@ -7,7 +9,7 @@ const myURL = url.parse('http://mywebsite.com/hello.html?id=100&status=active');
 
 // Serialized URL
 
-console.log(myURL.href);
+/*console.log(myURL.href);
 console.log(myURL.toString());
 
 // Host (root domain)
@@ -21,3 +23,18 @@ console.log(myURL.toString());
 // Pathname 
 
  console.log(myURL.pathname);
+
+ // Serialized query
+
+  console.log(myURL.search);
+
+ // Params object*/
+
+  console.log(myURL.searchParams); // NOT WORKING ?!!
+  
+/*  // Add parameters
+
+  myURL.searchParams.append('abc', '123');	
+  console.log(myURL.searchParams); 
+
+  // loop through params*/

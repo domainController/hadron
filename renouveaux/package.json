@@ -1,0 +1,26 @@
+{
+  "name": "renouveaux",
+  "version": "0.0.1",
+  "description": "YouTube E89IvwastRc",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kevin-garnette/hadron.git"
+  },
+  "keywords": [
+    "tuto"
+  ],
+  "author": "kami <cp.kenmoe@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kevin-garnette/hadron/issues"
+  },
+  "homepage": "https://github.com/kevin-garnette/hadron#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.2",
+    "supervisor": "^0.12.0"
+  }
+}
