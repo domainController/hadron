@@ -1,3 +1,5 @@
+// from 46:58 node crash course traversy brad
+
 const EventEmitter = require('events');
 
 // Create Class

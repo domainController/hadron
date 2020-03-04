@@ -6,13 +6,16 @@ const fs = require('fs');
 const server = http.createServer((req, res) => {
 	if(req.url === '/'){
 		fs.readFile(
-			path.joint(__dirname, 'public', 'index.html'), 
+			path.join(__dirname, 'public', 'index.html'), 
 			(err, content) => { 
 					if (err) throw err;
-					res.writeHead(200, {'Content-Type': 'text/html'});
+					res.writeHead(200, {'Content-Type': 'text/html'}); 
+					// This ABIVE can't hElp to displaY CSS my index.html 
 					res.end(content);
-				});}
+			}
+		)
+	}
+});
 
-const PORT = process.env.PORT || 5000;
-
+const PORT = process.env.PORT || 8000;
 server.listen(PORT, () => console.log(`Server running on port ${PORT}`));
