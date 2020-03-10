@@ -30,6 +30,8 @@ router.get('/api/micronutrients/:price', (req, res) => {
 // Create a micronutrient
 
 router.post('/api/micronutrients', (req, res) => {
-	res.send(req.body):
+	const newMicronutients = {
+		
+	}
 });
 module.exports = router;
