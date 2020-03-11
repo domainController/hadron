@@ -1,6 +1,7 @@
-const micronutriments = [
+const micronutrients = [
 	{
-	  description: "Multivitamins",
+	  id: 1,
+	  name: "Multivitamins",
 	  price: 28,
 	  quantity: 180,
 	  servings: 360,
@@ -13,7 +14,8 @@ const micronutriments = [
 	  photo: "https://s3.images-iherb.com/now/now03881/y/6.jpg",
 	},
 	{
-	  description: "Magnesium",
+	  id: 2,
+	  name: "Magnesium",
 	  price: 12,
 	  quantity: 500,
 	  servings: 170,
@@ -26,7 +28,8 @@ const micronutriments = [
 	  photo: "https://images-na.ssl-images-amazon.com/images/I/61dRaF6xDML._SL1000_.jpg",
 	},
 	{
-	  description: "Potassium",
+	  id: 3,
+	  name: "Potassium",
 	  price: 9,
 	  quantity: 500,
 	  servings: 200,
@@ -39,7 +42,8 @@ const micronutriments = [
 	  photo: "https://images-na.ssl-images-amazon.com/images/I/51jN5ImzdqL._SL1200_.jpg",
 	},
 	{
-	  description: "Calcium",
+	  id: 4,
+	  name: "Calcium",
 	  price: 23,
 	  quantity: 1000,
 	  servings: 350,
@@ -52,7 +56,8 @@ const micronutriments = [
 	  photo: "https://images-na.ssl-images-amazon.com/images/I/61uD4Sah1ML._SL1500_.jpg",
 	},
 	{
-	  description: "Omega 3",
+	  id: 5,
+	  name: "Omega 3",
 	  price: 21,
 	  quantity: 180,
 	  servings: 45,
@@ -65,7 +70,8 @@ const micronutriments = [
 	  photo: "https://s3.images-iherb.com/now/now01662/l/4.jpg",
 	},
 	{
-	  description: "Vitamin D3",
+	  id: 6,
+	  name: "Vitamin D3",
 	  price: 8,
 	  quantity: 120,
 	  servings: 45,
@@ -78,7 +84,8 @@ const micronutriments = [
 	  photo: "https://s3.images-iherb.com/now/now00372/w/8.jpg",
 	},	
 	{
-	  description: "Zinc",
+	  id: 7,
+	  name: "Zinc",
 	  price: 7,
 	  quantity: 100,
 	  servings: 100,
@@ -91,7 +98,8 @@ const micronutriments = [
 	  photo: "https://s3.images-iherb.com/clf/clf02951/w/9.jpg",
 	},
 	{
-	  description: "Carnitine",
+	  id: 8,
+	  name: "Carnitine",
 	  price: 30,
 	  quantity: 100,
 	  servings: 100,
@@ -104,7 +112,8 @@ const micronutriments = [
 	  photo: "https://s3.images-iherb.com/now/now00068/l/5.jpg",
 	},
 	{
-	  description: "CoQ10",
+	  id: 9,
+	  name: "CoQ10",
 	  price: 12,
 	  quantity: 120,
 	  servings: 120,
@@ -117,7 +126,8 @@ const micronutriments = [
 	  photo: "https://s3.images-iherb.com/cgn/cgn00944/w/47.jpg",
 	},
 	{
-	  description: "NAC",
+	  id: 10,
+	  name: "NAC",
 	  price: 10,
 	  quantity: 60,
 	  servings: 60,
@@ -130,7 +140,8 @@ const micronutriments = [
 	  photo: "https://s3.images-iherb.com/lex/lex15436/w/90.jpg",
 	},
 	{
-	  description: "ALA",
+	  id: 11,
+	  name: "ALA",
 	  price: 10,
 	  quantity: 60,
 	  servings: 60,
@@ -144,4 +155,4 @@ const micronutriments = [
 	},
 ];
 
-module.exports = micronutriments;
+module.exports = micronutrients;
