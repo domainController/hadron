@@ -1,9 +1,16 @@
+const Joi = require('joi');
 const express  = require('express');
 const app = express();
 app.use(express.json());
 const micronutrients = require('./micronutrients.js');
 
-
+/*app.post('/api/micronutrients', (res, req) => {
+	if (!req.body.name || req.body.name.length < 3){
+		// 400 Bad Request
+		res.status(400).send('Name is required and should be minimum 3 characters');
+		return;
+	}
+});*/
 
 app.get('/api/micronutrients', (req, res) => {
 	 res.send(micronutrients);
@@ -17,8 +24,13 @@ app.get('/api/micronutrients', (req, res) => {
 	 res.send(micronutrient);
 });*/
 
+app.post('/api/micronutrients', (req, res) => {
+	// 400 Bad Request 
+	res.status(400).send('Name is required and should be minimum 3 characters.');
+	return;
+})
 
-// we use postman but this appear "TypeError: micronutrients.push is not a function
+// we use postman but this appear worked great
 
 
 app.post('/api/micronutrients', (req, res) => {
