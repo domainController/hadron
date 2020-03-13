@@ -1,8 +1,14 @@
+// https://www.youtube.com/watch?v=pKd0Rpw7O48
+// Express.js Tutorial: Build RESTful APIs with Node and Express | Mosh
+// I STOPPED THIS COURSE AROUND 40'
+
 const Joi = require('joi');
 const express  = require('express');
 const app = express();
 app.use(express.json());
 const micronutrients = require('./micronutrients.js');
+
+
 
 /*app.post('/api/micronutrients', (res, req) => {
 	if (!req.body.name || req.body.name.length < 3){
