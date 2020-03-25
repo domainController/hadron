@@ -16,6 +16,7 @@ app.post('/api/posts', (req, res) => {
 });
 
 // Mock user
+
  const user ={
  	id: 1,
  	username: 'kami',
@@ -23,8 +24,9 @@ app.post('/api/posts', (req, res) => {
 
  }
 
+
 app.post('/api/login', (req, res) => {
-	jwt.sign();
+	jwt.sign({user: user});
 });
 
 
