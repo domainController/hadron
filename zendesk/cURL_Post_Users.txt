@@ -1,0 +1,14 @@
+curl -v -u cp.kenmoe@gmail.com:royfielding https://admintestpatrice.zendesk.com/api/v2/users.json -H "Content-Type: application/json" -X POST -d '{"user": {"name": "Tim Bernes Lee", "email": "tblee@cern.org"}}'
+
+curl -v -u cp.kenmoe@gmail.com:royfielding https://admintestpatrice.zendesk.com/api/v2/users.json -H "Content-Type: application/json" -X POST -d '{"user": {"name": "Alexandre Aghassipour", "email": "cpo@zendesk.com"}}'
+
+curl -v -u cp.kenmoe@gmail.com:royfielding https://admintestpatrice.zendesk.com/api/v2/users.json -H "Content-Type: application/json" -X POST -d '{"user": {"name": "Mikkel Svane", "email": "ceo@zendesk.com"}}'
+
+curl -v -u cp.kenmoe@gmail.com:royfielding https://admintestpatrice.zendesk.com/api/v2/users.json -H "Content-Type: application/json" -X POST -d '{"user": {"name": "Morten Primdahl", "email": "cto@zendesk.com"}}'
+
+curl -v -u cp.kenmoe@gmail.com:royfielding https://admintestpatrice.zendesk.com/api/v2/users.json -H "Content-Type: application/json" -X POST -d '{"user": {"name": "Adrian Mc Dermott", "email": "presidentOfProducts@zendesk.com"}}'
+
+curl -v -u cp.kenmoe@gmail.com:royfielding https://admintestpatrice.zendesk.com/api/v2/users.json -H "Content-Type: application/json" -X POST -d '{"user": {"name": "Christoph Janz", "email": "christoph@pointninecap.com"}}'
+
+curl -v -u cp.kenmoe@gmail.com:royfielding https://admintestpatrice.zendesk.com/api/v2/users.json -H "Content-Type: application/json" -X POST -d '{"user": {"name": " Colum Twomey", "email": "vpEngineering@zendesk.com"}}'
+, 

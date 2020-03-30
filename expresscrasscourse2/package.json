@@ -1,0 +1,17 @@
+{
+  "name": "expresscrasscourse2",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index",
+    "dev": "nodemon index"
+  },
+  
+  "keywords": [],
+  "author": "kami <cp.kenmoe@gmail.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.2"
+  }
+}

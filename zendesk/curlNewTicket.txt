@@ -1,0 +1,2 @@
+curl https://admintestpatrice.zendesk.com/api/v2/tickets.json -d '{"ticket": {"subject": "My printer is on fire!", "comment": { "body": "The smoke is very colorful." }}}' -H "Content-Type: application/json" -v -u cp.kenmoe@gmail.com:royfielding -X POST
+
