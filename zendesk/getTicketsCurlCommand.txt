@@ -1,0 +1,2 @@
+curl https://admintestpatrice.zendesk.com/api/v2/tickets.json -v -u cp.kenmoe@gmail.com:royfielding
+

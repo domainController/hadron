@@ -1,0 +1,4 @@
+https://admintestpatrice.zendesk.com/api/v2/incremental/tickets/	sample.json?per_page
+
+// Incremental Ticket Export
+curl https://admintestpatrice.zendesk.com/api/v2/incremental/tickets/cursor.json?start_time=1332034771 -v -u cp.kenmoe@gmail.com:royfielding
