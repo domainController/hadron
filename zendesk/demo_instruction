@@ -1,0 +1,8 @@
+3 - API, users and tickets
+You are the Zendesk administrator in your company and the management team asked you to
+periodically (each month) and automatically retrieve specific information about tickets and user
+updates. You realise the most straightforward way to proceed is to use the Zendesk
+REST API and will use the following documentation .
+Be creative for the automation of the process, scripting, Cron Job... Use the weapons you like.
+https://developer.zendesk.com/rest_api/docs/core/introduction
+https://developer.zendesk.com/rest_api/docs/core/incremental_export

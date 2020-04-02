@@ -2,6 +2,8 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
+app.get('api/members' (req, res) => )
+
 // Set static folder
 app.use(express.static(path.join(__dirname, 'public')));
 

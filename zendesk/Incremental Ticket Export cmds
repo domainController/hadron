@@ -1,4 +1,14 @@
 https://admintestpatrice.zendesk.com/api/v2/incremental/tickets/	sample.json?per_page
 
 // Incremental Ticket Export
-curl https://admintestpatrice.zendesk.com/api/v2/incremental/tickets/cursor.json?start_time=1332034771 -v -u cp.kenmoe@gmail.com:royfielding
+// https://developer.zendesk.com/rest_api/docs/support/incremental_export
+curl https://admintestpatrice.zendesk.com/api/v2/incremental/tickets/cursor.json?start_time=1585267200 -v -u cp.kenmoe@gmail.com:royfielding
+
+
+// Incremental Ticket Event Export
+
+https://admintestpatrice.zendesk.com/api/v2/incremental/ticket_events.json?start_time=1585267200
+
+// Incremental User Export
+
+curl https://admintestpatrice.zendesk.com/api/v2/incremental/users.json?start_time=1585267200 -u cp.kenmoe@gmail.com:royfielding

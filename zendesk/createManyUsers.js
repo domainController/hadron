@@ -11,3 +11,5 @@ for(x=0; x<20; x++) {
   });
 }
 
+curl https://{subdomain}.zendesk.com/api/v2/tickets.json \
+  -v -u {email_address}:{password}
