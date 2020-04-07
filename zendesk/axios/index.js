@@ -6,40 +6,92 @@ const token = Buffer.from(`${username}:${password}`, 'utf8').toString('base64')
 
 // ENDPOINTS 
 
-const initialTime = '1585267200';
-// Fri Mar 27 00:00:00 GMT 2020
-
-const baseURL = 'https://admintestpatrice.zendesk.com/api/v2/incremental';
-
-//is cursor pagination where string 'cursor' appears within url as shown below 
+const baseURL = 'https://admintestpatrice.zendesk.com/api/v2/incremental'; 
 const ticketsEndpoint = '/tickets/cursor.json?start_time=';
 const ticketEventsEndpoint = '/ticket_events.json?start_time=';
 const ticketMetricEventsEndpoint ='/ticket_metric_events.json?start_time=';
-const userEndpoint = '/users.json?start_time=';
-// ticket event export namely is legacy pagination only
-// with a next_page variable which itself includes a end_time varibale
+const usersEndpoint = '/users.json?start_time=';
 
+// TIMESTAMPS
 
-// Incremental Ticket Export (1/4)
+const UnixTimeOfFirstRequest = '1585267200';
+// Fri Mar 27 00:00:00 GMT 2020
+
+let end_time = '';
+
+// FORMATING
+
+const fs = require('fs');
+// let utils = require('./utils');
+
+///////////////////////////////////////////////////// EXPORTING TICKETS (1/4) ///////////////////////////////////////////////////////////////////////////
+
+// CHECK THE MOST RECENT FILES
+
 const getTickets = async url => {
-  try {
-    const response = await axios.get((`${baseURL}`+`${ticketsEndpoint}`), {
+   try {
+    const response = await axios.get((`${baseURL}`+`${ticketsEndpoint}`+`${UnixTimeOfFirstRequest}`),{
 	headers: {'Authorization': `Basic ${token}`}
    })
-    const data = response.data;
-    console.log(data);
+    const tickets = response.data;
+    let ticketsToText = JSON.stringify(tickets);
+
+
+// CREATING A TIMESTAMP
+
+    var timestamp = Math.round((new Date()).getTime() / 1000)
+
+// EXPORTING TICKETS TO DISK
+	
+    fs.writeFile('../export/Tickets_'+ timestamp +'.txt', ticketsToText, function(err)
+    {
+    	if (err) {
+    		console.log(err);
+    	}
+});
+
   } catch (error) {
     console.log(error);
   }
 };
 
-getTickets(console.log(`${baseURL}`+`${ticketEndpoint}`+`${initialTime}`));
-// Returns the tickets that changed since the start time
 
-// Incremental Ticket Event (2/4)
+getTickets(`${baseURL}`+`${ticketsEndpoint}`+`${UnixTimeOfFirstRequest}`); // Returns the tickets that changed since the start time
+
+
+/////////////////////////////////////////////////// ///  EXPORTING USERS (3/4) /////////////////////////////////////////////////////////////////////////////////
+
+/*const getUsers = async url => {
+  try {
+    const response = await axios.get((`${baseURL}`+`${usersEndpoint}`+`${UnixTimeOfFirstRequest}`),{
+	headers: {'Authorization': `Basic ${token}`}
+   })
+    const users = response.data;
+    let usersToText = JSON.stringify(users);
+    console.log(users);
+    fs.writeFile('./incrementalUsersExport.txt', usersToText, function(err)
+    {
+    	if (err) {
+    		console.log(err);
+    	}
+});
+
+  } catch (error) {
+    console.log(error);
+  }
+};
+
+getUsers(`${baseURL}`+`${usersEndpoint}`+`${UnixTimeOfFirstRequest}`);
+// Returns a listing of all users*/
+
+
+
+
+
+/*// Incremental Ticket Event (2/4)
 const getTicketEvents = async url => {
   try {
-    const response = await axios.get((`${baseURL}`+`${ticketEventsEndpoint}`+`${initialTime}`),{
+    const response = await axios.get((`${baseURL}`+`${ticketEventsEndpoint}`+`${UnixTimeOfFirstRequest}`),{
 	headers: {'Authorization': `Basic ${token}`}
    })
     const data = response.data;
@@ -48,29 +100,14 @@ const getTicketEvents = async url => {
     console.log(error);
   }
 };
-getTicketEvents(console.log(`${baseURL}`+`${ticketEventsEndpoint}`+`${initialTime}`));
+getTicketEvents(`${baseURL}`+`${ticketEventsEndpoint}`+`${UnixTimeOfFirstRequest}`);
 // Returns a stream of changes that occurred on tickets.
+*/
 
-// Incremental User Export (3/4)
-const getUsers = async url => {
-  try {
-    const response = await axios.get((`${baseURL}`+`${usersEndpoint}`+`${initialTime}`),{
-	headers: {'Authorization': `Basic ${token}`}
-   })
-    const data = response.data;
-    console.log(data);
-  } catch (error) {
-    console.log(error);
-  }
-};
-
-getUsers(console.log(`${baseURL}`+`${usersEndpoint}`+`${initialTime}`);
-// Returns a listing of all users
-
-// Incremental Ticket Metric Events (1/4)
+/*// Incremental Ticket Metric Events (1/4)
 const getTicketMetricEvents = async url => {
   try {
-    const response = await axios.get((`${baseURL}`+`${ticketsEndpoint}`), {
+    const response = await axios.get((`${baseURL}`+`${ticketMetricEventsEndpoint}`+`${UnixTimeOfFirstRequest}`, {
 	headers: {'Authorization': `Basic ${token}`}
    })
     const data = response.data;
@@ -80,5 +117,5 @@ const getTicketMetricEvents = async url => {
   }
 };
 
-getgetTicketMetricEvents(console.log(`${baseURL}`+`${ticketEndpoint}`+`${initialTime}`));
-// Returns ticket metric events that occurred on or after the start time
+getTicketMetricEvents(`${baseURL}`+`${ticketEndpoint}`+`${UnixTimeOfFirstRequest}`);
+// Returns ticket metric events that occurred on or after the start time*/

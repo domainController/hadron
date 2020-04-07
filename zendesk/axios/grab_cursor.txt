@@ -1,0 +1,33 @@
+1 - CHECK THE MOST RECENT FILE
+	IF NOK url = baseUrl + endPoint + startTime
+	THEN awk cursor|end_time;
+	url = baseUrl + endPoint + afterCursor
+
+awk -F"after_cursor" '{print $4}' Tickets_1586282354.txt
+
+sed -nr '/MOM:/ s/.*MOM:([^"]+).*/\1/p' Tickets_1586282354.txt
+
+grep -o 'after_cursor.*' Tickets_1586282354.txt
+
+after_cursor.
+
+:null,"after_cursor":"MTU4NjA4OTg2MC4wfHw1fA==","before_cursor"
+sed -ne '/after_cursor/,/before_cursor/p' Tickets_1586282354.txt
+
+sed -ne 's/after_cursor\(.*\)before_cursor/\1/' Tickets_1586282354.txt
+
+grep -Po 'after_cursor\K[*]+' Tickets_1586282354.txt
+
+grep -Eo 'after_cursor":".{0,25}' Tickets_1586282354.txt
+
+grep -Eo 'after_cursor":".before_cursor'Tickets_1586282354.txt | awk -F """ '{print $2}' 
+
+grep -oP '(?<=after_cursor":".){0,25}' Tickets_1586282354.txt
+
+grep -Po "(?<=syntaxHighlighterConfig\.)[a-zA-Z]+Color" file
+
+grep -Po "(?<=after_cursor\.)[*]" Tickets_1586282354.txt
+
+sed -n '/^after_cursor$/,/^before_cursor$/p' Tickets_1586282354.txt
+
+sed -n '/^after_cursor$/,/^before_cursor$/p' Tickets_1586282354.txt
