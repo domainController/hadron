@@ -1,6 +1,7 @@
 const fs = require('fs')
 const path = require('path');
 
+// CHECK THE MOST RECENT FILE
 
 var getMostRecent = function (dir, cb) {
 	var dir = path.resolve(dir);
@@ -18,7 +19,7 @@ var getMostRecent = function (dir, cb) {
 		if (sorted.length > 0) {
 			cb(null, sorted[0]);
 		} else {
-			cb('Seems there is no files in this dir...');
+			cb('Well... seems there is no files in this dir...');
 		}
 	})
 }

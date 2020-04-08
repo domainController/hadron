@@ -1,6 +1,6 @@
 const fs = require('fs');
 
-
+// TO CHECK THE MOST RECENT FILES IN A
 // SETTING URL
 
 const baseUrl = 'https://admintestpatrice.zendesk.com/api/v2/incremental'; 
@@ -23,14 +23,14 @@ module.exports = {
 
 // EXTRACTING AFTER CURSOR 
 
-/*module.exports = {
+module.exports = {
 getAfterCursor: function(){
 	var myFile = fs.readFileSync(ticketsToText,'utf8');
 	var pattern = new RegExp(/"after_cursor":"(.*)","before_cursor/);
 	var cursor = myFile.match(pattern);
 	var after cursor = console.log(cursor[1])
 }};
-*/
+
 
 
 // CURSOR PAGINATION:

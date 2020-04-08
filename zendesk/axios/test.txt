@@ -1,0 +1,5 @@
+# else grep -oP '(?<=end_time":)[^}]+' usersExportTemplate.txt
+# ticketEventsEndpoint='/ticket_events.json?start_time=';
+# ticketMetricEventsEndpoint='/ticket_metric_events.json?start_time=';
+# usersEndpoint='/users.json?start_time=';:x
+

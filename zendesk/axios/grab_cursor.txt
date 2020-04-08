@@ -20,9 +20,15 @@ grep -Po 'after_cursor\K[*]+' Tickets_1586282354.txt
 
 grep -Eo 'after_cursor":".{0,25}' Tickets_1586282354.txt
 
+X
+
 grep -Eo 'after_cursor":".before_cursor'Tickets_1586282354.txt | awk -F """ '{print $2}' 
 
 grep -oP '(?<=after_cursor":".){0,25}' Tickets_1586282354.txt
+
+grep -oP '(?<=after_cursor":")[^ ]+' Tickets_1586282354.txt
+
+grep -oP '(?<=after_cursor":")[^"]+' Tickets_1586282354.txt
 
 grep -Po "(?<=syntaxHighlighterConfig\.)[a-zA-Z]+Color" file
 
@@ -30,4 +36,50 @@ grep -Po "(?<=after_cursor\.)[*]" Tickets_1586282354.txt
 
 sed -n '/^after_cursor$/,/^before_cursor$/p' Tickets_1586282354.txt
 
-sed -n '/^after_cursor$/,/^before_cursor$/p' Tickets_1586282354.txt
+sed -n '/^ *after_cursor *$/,/^ *before_cursor *$/p' Tickets_1586282354.txt
+
+sed '/^after_cursor/, /^before_cursor/!d' input_file (notice /^before_cursor/)
+
+
+
+
+
+
+
+
+ grep -oP '(?<=end_time":)[^}]+' usersExportTemplate.txt
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
