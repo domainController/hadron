@@ -1,10 +1,10 @@
 const fs = require('fs');
 
 
- fs.readFile('./ticketsEndpointUrl', 'ASCII', function (err, data) {
-	let urlocal = data;
-	url = urlocal  ;
-	console.log(url);
+fs.readFile('./ticketsEndpointUrl', 'ASCII', function (err, data) {
+ 	if (err) { throw err };
+	uri = data;
+	console.log(("\'"+`${uri}`+ "\'"));
 })
 
 /*let url = fs.readFileSync('./ticketsEndpointUrl', 'ASCII');
