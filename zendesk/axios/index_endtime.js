@@ -7,8 +7,7 @@ const glob = require('glob');
 const axios = require("axios").default;
 const username = 'cp.kenmoe@gmail.com';
 const password = 'royfielding';
-const token = Buffer.from(`${username}:${password}`,'utf8').toString('base64');
-// foudn here https://flaviocopes.com/axios-send-authorization-header/
+const token = Buffer.from(`${username}:${password}`, 'utf8').toString('base64');
 axios.defaults.baseURL = 'https://admintestpatrice.zendesk.com/api/v2/incremental';
 const startFrom2019 = '/tickets/cursor.json?start_time=1546500000'; // Thu Jan  3 07:20:00 GMT 2019
 const exportDir = '../export/';
@@ -26,7 +25,6 @@ const exportDir = '../export/';
     .then(response => {
     const tickets = response.data;
     console.log(response.status);
-    
 
 // CONVERTING JSON TO TEXT AND 
     let ticketsASCII = JSON.stringify(tickets);
@@ -49,24 +47,27 @@ const exportDir = '../export/';
     } else {
 
 // CHECK MOST RECENT FILE
-	const newestFile = glob.sync('../export/Tickets*')
+	const newestFile = glob.sync('../export/*Tickets*')
   	.map(name => ({name, ctime: fs.statSync(name).ctime}))
   	.sort((a, b) => b.ctime - a.ctime)[0].name
 	console.log('Most recent file is:'+ '' + newestFile) ;
 
 // and EXTRACT AFTER CURSOR FROM IT
 	let file = fs.readFile(newestFile, 'ASCII', function(err, doc) {
-    let after_cursor = doc.match(/(?<=after_cursor\":\")(.*)(?=\",\"before_cursor)/);
-    console.log('The after_cursor variable look like this :'+ '' + after_cursor);
+    let end_time = doc.match(/(?<=end_time\":)(.*)(?=})/g);
+    console.log('The end_time variable look like this :'+ '' + end_time);
+
+//  or EXTRACT END TIME FROM IT
+  
 
 // then BUILD NEXT PAGE URL ENDPOINT
-    const nextPage = '/tickets/cursor.json?cursor=' + after_cursor;
- 	console.log('The next page url look like this :'+ '' +  nextPage);	
+    const newStartTime = '/tickets/cursor.json?cursor=' + end_time;
+ 	console.log('The next page url look like this :'+ '' +  newStartTime);	
 
 
 // CONNECTING TO API WITH CURSOR
 	axios({
-    url: nextPage,
+    url: newStartTime,
 	headers: {'Authorization': `Basic ${token}`},
    })
 
