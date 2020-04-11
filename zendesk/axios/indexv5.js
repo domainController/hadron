@@ -1,3 +1,6 @@
+// YOUTUBE VIDEO "Axios API calls to cursor based pagination endpoint"
+// https://www.youtube.com/watch?v=q3LaWh8SisY
+
 // NODE MODULE	
 const fs = require('fs');
 const axios = require("axios").default;
