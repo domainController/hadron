@@ -12,6 +12,7 @@ const preCursor = '/tickets/cursor.json';
 const exportDir = '../export/';
 axios.defaults.baseURL = 'https://admintestpatrice.zendesk.com/api/v2/incremental';
 axios.defaults.headers.common['Authorization'] = 'kQEINBESNwjrCKThw4vaWOjEFNdiF7DGX0QwkhBN';
+// https://stackoverflow.com/questions/43051291/attach-authorization-header-for-all-axios-requests
 
 // FORMAT
 let regexpCursor = /(?<=after_cursor\":\")(.*)(?=\",\"before_cursor)/g;
