@@ -1,22 +1,14 @@
 {
-  "name": "nodePunk",
+  "name": "okc",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/kevin-garnette/hadron.git"
-  },
   "keywords": [],
   "author": "kami <cp.kenmoe@gmail.com>",
   "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/kevin-garnette/hadron/issues"
-  },
-  "homepage": "https://github.com/kevin-garnette/hadron#readme",
   "dependencies": {
     "okcupidjs": "^1.1.6"
   }
