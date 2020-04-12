@@ -1,6 +1,7 @@
 const fs = require('fs');
 const glob = require('glob')
 const exportDir = '../export/';
+let regexpCursor = /(?<=after_cursor\":\")(.*)(?=\",\"before_cursor)/g;
 
 
 // CHECK MOST RECENT FILE
@@ -12,6 +13,8 @@ module.exports = newestFile
 
 // and EXTRACT AFTER CURSOR FROM IT
 
+let afterCursor = fs.readFileSync(newestFile).toString().match(regexpCursor);
+console.log(`${afterCursor}`);
 
 
 /* let cursorRoad = function extractCursor(){ 
