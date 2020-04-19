@@ -6,8 +6,15 @@ const app = express();
 
 // Get single Member
 app.get('/api/micronutrients/:description', (req, res) => {
-    res.json(micronutrients.filter(micronutrients => micronutrient.description === req.params.description));
+ const found = micronutrients.some(micronutrient => micronutrient.description === req.params.description);
+ if (found) {
+ res.json(micronutrients.filter(micronutrient => micronutrient.description === req.params.description));
+ } else {
+     res.status(400).json({ msg:`No Micronutrient with description ${req.params.description} !`});
+    }
 });
+
+
 
 // Init middleware
 app.use(logger);

@@ -1,6 +1,5 @@
 const micronutrients = [
 	{
-	  "id": 1,
 	  "description": "Multivitamins",
 	  "price": 28,
 	  "quantity": 180,
