@@ -1,1 +1,20 @@
-<h1>Micronutrients</h1>
+<h1 class="text-center mb-3">{{title}}</h1>
+<form action="/api/micronutrients" method="POST" class="mb-4">
+    <div class="form-group">
+        <label for="description">Description</label>
+        <input type="text" name="description" class="form-control">
+    </div>
+    <div class="form-group">
+        <label for="price">Price</label>
+        <input type="integer" name="price" class="form-control">
+    </div>
+<input type="submit" value="Add Micronutrient" class="btn btn-primary btn-block">
+</form>
+<h4>Micronutrients</h4>
+<ul class="list-group">
+    {{#each micronutrients}}
+        <li class="list-group-item">
+            {{this.description}}: {{this.price}}
+        </li>
+    {{/each}}
+</ul>
