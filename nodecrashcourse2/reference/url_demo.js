@@ -24,3 +24,6 @@ console.log(parallels.searchParams);
 // Add Params
 parallels.searchParams.append('city', 'Hamburg');
 console.log(parallels.searchParams);
+
+// Loop through params
+parallels.searchParams.forEach((value, name)=> console.log(`${name}:${value}`));

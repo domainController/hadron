@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="UTF-8" />
+	<title>Budget</title>
+	<link rel="stylesheet" type="text/css" href="./css/formCategories.css"/>
+</head>
+<body>
+	<h1 id="theme">Expenses Categories</h1>
+<div class="categorie">
+	<div class="gear">
+		<form method="post" action="formCategories.js">
+			<fieldset id="gear">
+				<legend> Buying Equipement </legend>
+				<select name="Gear">
+					<optgroup label="Hiking">
+						<option value="Backpacks">Backpacks</option>
+						<option value="Hardshells">Hardshells</option>
+						<option value="Trousers">Trousers</option>
+						<option value="Tent">Tent</option>
+						<option value="Hammock">Hammock</option>
+						<option value="Tarp">Tarp</option>
+					</optgroup>
+					<optgroup label="Tech">
+						<option value="Laptop">MacBook</option>
+						<option value="Tablet">Ipad</option>
+						<option value="Powerbanks">PowerBanks</option>
+					</optgroup>
+				</select>
+			</fieldset>
+		</form>
+	</div><!--end gear-->
+	<div class="supplementation">
+		<form method="post" action="kagoshimaForm.js">
+			<fieldset id="servings">
+				<legend> Ordering Supplementation <br></legend>
+				<select name="supplementation">
+					<optgroup label="Nootropics">
+						<option value="Pramiracetam">Pramiracetam</option>
+						<option value="Phenylpiracetam">Phenylpiracetam</option>
+						<option value="Semax">Semax</option>
+						<option value="Noopept">Noopept</option>
+						<option value="Theine">Theine</option>
+						<option value="Alpha GPC">Alpha GPC</option>
+					</optgroup>
+					<optgroup label="Vitamins">
+						<option value="Mg/K/Calcium">Mg/K/Calcium</option>
+						<option value="omega 3">Omega 3</option>
+						<option value="multivitamins">Multivitamins</option>
+						<option value="alcar">ALCAR</option>
+						<option value="zinc">Zinc</option>
+						<option value="NAC">NAC</option>
+						<option value="vitamin D3">Vitamin D3</option>
+						<option value="probitotique">Probitotique</option>
+						<option value="ALA">ALA</option>
+						<option value="melatonin">Melatonin</option>
+						<option value="lion's mane">Lion's mane</option>
+					</optgroup>
+					<optgroup label= "Proteins">
+						<option value="Whey">Whey</option>
+						<option value="BCAA">BCAA</option>
+						<option value="glutamin">Glutamin</option>
+					</optgroup>
+				</select><!-- end supplementation -->
+			</fieldset>
+		</form>
+	</div>
+	<div class="landing">
+		<form method="post" action="kagoshimaForm.js">
+			<fieldset id="landing">
+				<legend> Transitioning <br></legend>
+				<select name="landing">
+					<option value="Flight Ticket">Flight Ticket</option>
+					<option value="Self-Storage">Self-Storage</option>
+				</select>
+			</fieldset>
+		</form>
+	</div><!--end landing-->
+	<div class="supermarket">
+		<form method="post" action="kagoshimaForm.js">
+			<fieldset id="groceries">
+				<legend> Supermarket <br></legend>
+				<select name="supermarket">
+					<optgroup label="Food">
+						<option value="Pates">Pates</option>
+						<option value="Sel fume">Sel Fume</option>
+						<option value="Shiitake">Shiitake</option>
+						<option value="Curry">Curry</option>
+						<option value="Huile d'Olive">Huile d'Olive</option>
+						<option value="Huile de Colza">Huile de Colza</option>
+						<option value="Piments">Piments</option>
+					</optgroup>
+					<optgroup label="Hygiene">
+						<option value="Laundry">Laundry</option>
+						<option value="Soap">Soap</option>
+						<option value="Lingettes">Lingettes</option>
+						<option value="Dentifrice">Dentifrice</option>
+						<option value="Deo">Deo</option>
+						<option value="Febreze">Febreze</option>
+						<option value="Tea tree">Tea Tree</option>
+						<option value="Coton-tiges">Coton-Tiges</option>
+					</optgroup>
+				</select><!-- end supermarket -->
+			</fieldset>
+		</form>
+	</div>
+	<div class="pass">
+		<form method="post" action="kagoshimaForm.js">
+			<fieldset id="monthlyFees">
+				<legend> Recurrent <br></legend>
+				<select name="pass">
+					<optgroup label="Pass">
+						<option value="Bus pass">Bus pass</option>
+						<option value="Gym pass">Gym pass</option>
+						<option value="Internet">Internet</option>
+					</optgroup>
+					<optgroup label="Fees">
+							<option value="Laundry">Laundry</option>
+							<option value="Bank">Bank</option>
+							<option value="YouTube">YouTube</option>
+					</optgroup>
+				</select><!-- end pass -->
+			</fieldset>
+		</form>
+	</div><!--end pass-->
+<script>
+
+var b = document.body;
+
+var div = b.childNodes[10];
+
+var p1= div.childNodes[1];
+
+var texte = p1.childNodes[0].nodeValue;
+
+alert(texte);
+
+</script>
+</body>
+</html>
+
+<!-- COURS COMPLET HTML ET CSS [63/71] - Organiser et mettre en forme un formulaire
+	https://www.youtube.com/watch?v=jtmaFUs-HVw&t=398s
+-->
