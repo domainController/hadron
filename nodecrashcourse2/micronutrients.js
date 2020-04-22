@@ -1,4 +1,4 @@
-const micronutriments = [
+const micronutrients = [
 	{
 	  description: "Multivitamins",
 	  price: 28,
@@ -132,5 +132,4 @@ const micronutriments = [
 	  photo: "https://s3.images-iherb.com/drb/drb00133/w/45.jpg",
 	},
 ];
-
-module.exports = micronutriments ;
+module.exports = micronutrients;
