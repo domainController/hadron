@@ -1,0 +1,45 @@
+body {
+
+	font-size: 16px
+	font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+	color: orange;
+}
+
+#gear{
+	background-color: rgba(170, 200,40, 0.6);
+	padding:10px;
+	margin: 20px 0px;
+}
+
+#servings{
+	background-color: rgba(170, 200,40, 0.6);
+	padding:10px;
+	margin: 20px 0px;
+}
+
+#landing{
+	background-color: rgba(170, 200,40, 0.6);
+	padding:10px;
+	margin: 20px 0px;
+}
+
+#groceries{
+	background-color: rgba(170, 200,40, 0.6);
+	padding:10px;
+	margin: 20px 0px;
+}
+
+#monthlyFees{
+	background-color: rgba(170, 200,40, 0.6);
+	padding:10px;
+	margin: 20px 0px;
+}
+
+legend {
+	font-weight: : bold;
+	text-transform: uppercase;
+	font-size: 18px;
+	color: #444;
+}
+
+<!-- 

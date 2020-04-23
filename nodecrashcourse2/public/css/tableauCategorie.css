@@ -1,0 +1,23 @@
+body{
+	font-family: BlinkMacSystemFont,-apple-system,Segoe UI,Roboto,Oxygen,Ubuntu,Cantarell,Fira Sans,Droid Sans,Helvetica Neue,Helvetica,Arial,sans-serif;
+}
+
+td, th {
+	border: 1px solid black;
+	padding: 7px;
+}
+
+th{
+	background-color: lightblue;
+}
+
+thead{
+	font-size: 0.8em;
+}
+tfoot{
+	background-color:  	#FF7F50;
+}
+
+table{
+	border-collapse: collapse;
+}
