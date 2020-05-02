@@ -17,3 +17,6 @@ console.log(path.parse(__filename));
 
 // Concatenate Path
 console.log(path.join(__dirname, 'test', 'hello.html'));
+ 
+// 
+console.log(path.resolve(__dirname, './client/dist'));
