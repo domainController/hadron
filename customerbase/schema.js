@@ -10,44 +10,59 @@ const {
 } = require('graphql');
 
 // Hardcoded data
-const micronutrients = [
-  { id: '1', name: 'Multivitamins', site: 'iHerb', price: 28 },
-  { id: '2', name: 'Magnesium', site: 'amazon.co.uk', price: 12 },
-  { id: '3', name: 'Potassium', site: 'amazon.co.uk', price: 9 },
+const users = [
+  {
+    userid: '16235101125700887715',
+    realname: 'Stefanie',
+    location: 'Munich, Germany',
+    age: 41,
+  },
+  {
+    userid: '4621266595948139765',
+    realname: 'Rosa',
+    location: 'Santiago, Chile',
+    age: 46,
+  },
+  {
+    userid: '7337320773995286956',
+    realname: 'pond',
+    location: 'Ban Mae Nam, Thailand',
+    age: 41,
+  },
 ];
 
-// Micronutrient Type
-const MicronutrientType = new GraphQLObjectType({
-  name: 'Micronutrient',
+// User Type
+const UserType = new GraphQLObjectType({
+  realname: 'User',
   fields: () => ({
-    id: { type: GraphQLString },
-    name: { type: GraphQLString },
-    site: { type: GraphQLString },
-    price: { type: GraphQLInt },
+    userid: { type: GraphQLString },
+    realname: { type: GraphQLString },
+    location: { type: GraphQLString },
+    age: { type: GraphQLInt },
   }),
 });
 
 // Root Query
 const RootQuery = new GraphQLObjectType({
-  name: 'RootQueryType',
+  realname: 'RootQueryType',
   fields: {
-    Micronutrients: {
-      type: MicronutrientType,
+    user: {
+      type: UserType,
       args: {
-        id: { type: GraphQLString },
+        userid: { type: GraphQLString },
       },
       resolve(parentValue, args) {
-        for (let i = 0; i < micronutrients.length; i++) {
-          if (micronutrients[i].id == args.id) {
-            return micronutrients[i];
+        for (let i = 0; i < users.length; i++) {
+          if (users[i].userid == args.userid) {
+            return users[i];
           }
         }
       },
     },
-    micronutrients: {
-      type: new GraphQLList(MicronutrientType),
+    users: {
+      type: new GraphQLList(UserType),
       resolve(parentValue, args) {
-        return micronutrients;
+        return users;
       },
     },
   },
