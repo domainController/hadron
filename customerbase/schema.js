@@ -1,3 +1,5 @@
+const axios = require('axios');
+
 const {
   GraphQLObjectType,
   GraphQLObject,
@@ -10,30 +12,30 @@ const {
 } = require('graphql');
 
 // Hardcoded data
-const users = [
-  {
-    userid: '16235101125700887715',
-    realname: 'Stefanie',
-    location: 'Munich, Germany',
-    age: 41,
-  },
-  {
-    userid: '4621266595948139765',
-    realname: 'Rosa',
-    location: 'Santiago, Chile',
-    age: 46,
-  },
-  {
-    userid: '7337320773995286956',
-    realname: 'pond',
-    location: 'Ban Mae Nam, Thailand',
-    age: 41,
-  },
-];
+// const users = [
+//   {
+//     userid: '16235101125700887715',
+//     realname: 'Stefanie',
+//     location: 'Munich, Germany',
+//     age: 41,
+//   },
+//   {
+//     userid: '4621266595948139765',
+//     realname: 'Rosa',
+//     location: 'Santiago, Chile',
+//     age: 46,
+//   },
+//   {
+//     userid: '7337320773995286956',
+//     realname: 'pond',
+//     location: 'Ban Mae Nam, Thailand',
+//     age: 41,
+//   },
+// ];
 
 // User Type
 const UserType = new GraphQLObjectType({
-  realname: 'User',
+  name: 'User',
   fields: () => ({
     userid: { type: GraphQLString },
     realname: { type: GraphQLString },
@@ -44,7 +46,7 @@ const UserType = new GraphQLObjectType({
 
 // Root Query
 const RootQuery = new GraphQLObjectType({
-  realname: 'RootQueryType',
+  name: 'RootQueryType',
   fields: {
     user: {
       type: UserType,
@@ -52,11 +54,14 @@ const RootQuery = new GraphQLObjectType({
         userid: { type: GraphQLString },
       },
       resolve(parentValue, args) {
-        for (let i = 0; i < users.length; i++) {
+        /* for (let i = 0; i < users.length; i++) {
           if (users[i].userid == args.userid) {
             return users[i];
           }
-        }
+        } */
+        return axios
+          .get(`http://localhost:3000/users?userid=${args.userid}`)
+          .then((res) => res.data);
       },
     },
     users: {
