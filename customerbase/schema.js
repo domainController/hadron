@@ -59,19 +59,48 @@ const RootQuery = new GraphQLObjectType({
             return users[i];
           }
         } */
+        let config = {
+          params: {
+            userid: args.userid,
+          },
+        };
         return axios
-          .get(`http://localhost:3000/users?userid=${args.userid}`)
+          .get('http://localhost:3000/users', config)
           .then((res) => res.data);
       },
     },
     users: {
       type: new GraphQLList(UserType),
       resolve(parentValue, args) {
-        return users;
+        return axios.get('http://localhost:3000/users').then((res) => res.data);
+      },
+    },
+  },
+});
+
+const mutation = new GraphQLObjectType({
+  name: 'Mutation',
+  fields: {
+    addUser: {
+      type: UserType,
+      args: {
+        realname: { type: new GraphQLNonNull(GraphQLString) },
+        location: { type: new GraphQLNonNull(GraphQLString) },
+        age: { type: new GraphQLNonNull(GraphQLInt) },
+      },
+      resolve(parentValue, args) {
+        return axios
+          .post('http://localhost:3000/users', {
+            realname: args.realname,
+            location: args.location,
+            age: args.age,
+          })
+          .then((res) => res.data);
       },
     },
   },
 });
 module.exports = new GraphQLSchema({
   query: RootQuery,
+  mutation,
 });
