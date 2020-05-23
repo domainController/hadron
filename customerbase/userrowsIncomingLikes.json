@@ -1,0 +1,65 @@
+{
+  "data": {
+    "user": {
+      "id": "15131794689503010743",
+      "notificationCounts": {
+        "likesIncoming": 1,
+        "__typename": "NotificationCounts"
+      },
+      "__typename": "User",
+      "likes": {
+        "data": [
+          {
+            "matchPercent": 84,
+            "senderLikeTime": null,
+            "targetLikeTime": 1589983956000,
+            "likeTime": 1589983956000,
+            "senderMessageTime": null,
+            "targetMessageTime": null,
+            "targetLikeViaSpotlight": false,
+            "senderPassed": false,
+            "firstMessage": null,
+            "user": {
+              "id": "14721822251620742485",
+              "username": "14721822251620742485",
+              "displayname": "Nilne",
+              "age": 43,
+              "isOnline": true,
+              "location": {
+                "summary": "Nonthaburi, Thailand",
+                "__typename": "Location"
+              },
+              "primaryImage": {
+                "square225": "https://cdn.okccdn.com/php/load_okc_image.php/images/225x225/225x225/0x144/1152x1296/2/1206128879936161429.jpeg",
+                "__typename": "Photo"
+              },
+              "primaryImageBlurred": {
+                "square225": "https://cdn.okccdn.com/media/img/fuzzy-faces/200x200-2/74.png",
+                "__typename": "Photo"
+              },
+              "__typename": "User"
+            },
+            "__typename": "Match"
+          }
+        ],
+        "pageInfo": {
+          "after": null,
+          "hasMore": false,
+          "total": 1,
+          "__typename": "PageInfo"
+        },
+        "__typename": "IncomingLikesConnection"
+      },
+      "lastBoost": null,
+      "promosForPage": [
+        {
+          "upsellType": "boost",
+          "featureType": "token",
+          "name": "boost.getmorelikes",
+          "__typename": "Promo"
+        }
+      ]
+    }
+  },
+  "extensions": {}
+}

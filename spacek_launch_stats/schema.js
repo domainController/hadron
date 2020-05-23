@@ -47,6 +47,7 @@ const RootQuery = new GraphQLObjectType({
           .then((res) => res.data);
       },
     },
+
     launch: {
       type: LaunchType,
       args: {
@@ -58,6 +59,7 @@ const RootQuery = new GraphQLObjectType({
           .then((res) => res.data);
       },
     },
+
     rockets: {
       type: new GraphQLList(RocketType),
       resolve(parent, args) {
@@ -66,6 +68,7 @@ const RootQuery = new GraphQLObjectType({
           .then((res) => res.data);
       },
     },
+
     rocket: {
       type: RocketType,
       args: {
