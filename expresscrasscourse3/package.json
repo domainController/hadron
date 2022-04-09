@@ -16,7 +16,7 @@
     "uuid": "^7.0.3"
   },
   "devDependencies": {
-    "moment": "^2.24.0",
+    "moment": "^2.29.2",
     "nodemon": "^2.0.3"
   }
 }
